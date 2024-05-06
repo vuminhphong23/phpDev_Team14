@@ -1,11 +1,29 @@
 <?php
+    function ann() {
+        echo "<script>
+                if (confirm('Tên tài khoản đã tồn tại. Nhập lại?')) {
+                    window.location.href = 'form_register.php';
+                } else {
+                    // Do something else or simply close the dialog
+                }
+              </script>";
+    }
+    function an() {
+        echo "<script>
+                if (confirm('Mã sinh viên đã tồn tại. Nhập lại?')) {
+                    window.location.href = 'form_register.php';
+                } else {
+                    // Do something else or simply close the dialog
+                }
+              </script>";
+    }
     require_once('../../config.php');
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Xử lý đăng ký
         $host = "localhost";
         $user = "root";
-        $password = DB_PASSWORD;
+        $password = "ducanh12@#";
         $dbname = "sinhvien";
 
         $conn = new mysqli($host, $user, $password, $dbname);
@@ -28,9 +46,7 @@
         $sql_check = "SELECT * FROM tblsinhvien WHERE MSSV = '$MSSV'";
         $result_check = $conn->query($sql_check);
         if ($result_check->num_rows > 0) {
-            echo "Lỗi: MSSV đã tồn tại!";
-            echo "<br>";
-            echo "<a href='form_register.php'>Quay lại</a>";
+            an();
             exit();
         }
 
@@ -38,9 +54,7 @@
         $sql_check_user = "SELECT * FROM tblusers WHERE TK = '$TK'";
         $result_check_user = $conn->query($sql_check_user);
         if ($result_check_user->num_rows > 0) {
-            echo "Lỗi: Tên tài khoản đã tồn tại!";
-            echo "<br>";
-            echo "<a href='form_register.php'>Quay lại</a>";
+            ann();
             exit();
         }
 

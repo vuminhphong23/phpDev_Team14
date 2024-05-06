@@ -9,6 +9,16 @@ function ann() {
                 }
               </script>";
 }
+
+function an() {
+    echo "<script>
+            if (confirm('Mật khẩu không chính xác. Quay lại đăng nhập?')) {
+                window.location.href = 'form_login.php';
+            } else {
+                // Do something else or simply close the dialog
+            }
+          </script>";
+}
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     require_once('../../config.php');
 
@@ -47,20 +57,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo "<br>";
             echo "<a href='form_login.php'>Quay lại</a>"; 
         } else {
-            // Mật khẩu không khớp
-            echo "<h1 style='color: red;'>Lỗi!</h1>";
-            echo "Mật khẩu không chính xác!";
-            echo "<br>";
-            echo "<a href='form_login.php'>Quay lại</a>"; 
-
+            an();
         }
-
     } else {
-        // Tài khoản không tồn tại trong cơ sở dữ liệu
-        // echo "<h1 style='color: red;'>Lỗi!</h1>";
-        // echo "Tài khoản không tồn tại!";
-        // echo "<br>";
-        // echo "<a href='form_login.php'>Quay lại</a>"; 
         ann();
     }
 

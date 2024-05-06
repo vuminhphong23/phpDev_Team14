@@ -2,7 +2,7 @@
 require_once('../config.php');
 $host = "localhost";
 $user ="root";
-$password = DB_PASSWORD;
+$password = "ducanh12@#";
 $con=mysqli_connect($host,$user,$password);
 
 // Kiểm tra kết nối

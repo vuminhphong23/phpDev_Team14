@@ -1,3 +1,3 @@
 <!-- <?php
-define('DB_PASSWORD', '1234');
+define('DB_PASSWORD', 'ducanh12@#');
 ?> -->
