@@ -7,7 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 require_once('../config.php');
                 $host = "localhost";
                 $user = "root";
-                $password = DB_PASSWORD;
+                $password = "ducanh12@#";
                 $dbname = "fileupload";
                 $conn = new mysqli($host, $user, $password, $dbname);
 
