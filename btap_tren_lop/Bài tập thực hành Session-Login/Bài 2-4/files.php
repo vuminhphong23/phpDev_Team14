@@ -78,7 +78,7 @@
         echo "<p style='color: green; text-align: center;'>".$_GET['success']."</p>";
     }
     ?>
-    <form action="../Controller/upload.php" method="post" enctype="multipart/form-data">
+    <form action="upload.php" method="post" enctype="multipart/form-data">
         <label for="fileToUpload" class="choose-btn">Choose File</label>
         <input type="file" name="fileToUpload" id="fileToUpload" class="file-input" style="display: none;" onchange="displayFileName()">
         <span id="selectedFileName"></span>

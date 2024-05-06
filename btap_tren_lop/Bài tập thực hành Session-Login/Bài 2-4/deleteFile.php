@@ -4,7 +4,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $fileToDelete = $_POST['fileToDelete'];
         if (file_exists($fileToDelete)) {
             if (unlink($fileToDelete)) {
-                require_once('../config.php');
+                require_once('../../config.php');
                 $host = "localhost";
                 $user = "root";
                 $password = DB_PASSWORD;
@@ -19,28 +19,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $sql = "DELETE FROM tblfile WHERE name = '$fileNameDelete'";
 
                 if ($conn->query($sql) === TRUE) {
-                    header("Location: ../View/files.php?success=File deleted successfully.");
+                    header("Location: files.php?success=File deleted successfully.");
                     exit();
                 } else {
-                    header("Location: ../View/files.php?error=Failed to delete file from database.");
+                    header("Location: files.php?error=Failed to delete file from database.");
                     exit();
                 }
 
                 $conn->close();
             } else {
-                header("Location: ../View/files.php?error=Failed to delete file from disk.");
+                header("Location: files.php?error=Failed to delete file from disk.");
                 exit();
             }
         } else {
-            header("Location: ../View/files.php?error=File does not exist.");
+            header("Location: files.php?error=File does not exist.");
             exit();
         }
     } else {
-        header("Location: ../View/files.php?error=Invalid file information.");
+        header("Location: files.php?error=Invalid file information.");
         exit();
     }
 } else {
-    header("Location: ../View/files.php?error=Invalid request.");
+    header("Location: files.php?error=Invalid request.");
     exit();
 }
 ?>
