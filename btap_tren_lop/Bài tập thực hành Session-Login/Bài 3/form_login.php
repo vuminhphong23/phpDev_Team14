@@ -22,10 +22,9 @@ if(isset($_GET['success']) && $_GET['success'] == 1) {
         }
         form {
             max-width: 400px;
-            max-height: 800px;
             margin: 0 auto;
             background-color: #fff;
-            padding: 20px;
+            padding: 25px;
             border-radius: 5px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
