@@ -18,7 +18,7 @@
             max-width: 400px;
             margin: 0 auto;
             background-color: #fff;
-            padding: 20px;
+            padding: 25px;
             border-radius: 5px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
@@ -49,6 +49,9 @@
         input[type="submit"]:hover {
             background-color: #0056b3;
         }
+        .login-button {
+            float: right; /* Đưa nút vào góc phải */
+        }
     </style>
 </head>
 <body>
@@ -77,6 +80,8 @@
         <input type="password" id="txtMatKhau" name="txtMatKhau" required>
         <br><br>
         <input type="submit" value="Đăng ký">
+        <br><br>
+        <a href="form_login.php" class="login-button">Đăng nhập</a>
     </form>
 
     <script>

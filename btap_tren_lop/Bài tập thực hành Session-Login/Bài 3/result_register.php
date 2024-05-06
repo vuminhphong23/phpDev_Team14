@@ -1,3 +1,12 @@
+function err() {
+        echo "<script>
+                if (confirm('Tài khoản đã tồn tại!!')) {
+                    window.location.href = 'form_register.php';
+                } else {
+                    // Do something else or simply close the dialog
+                }
+              </script>";
+}
 <?php
     require_once('../../config.php');
 
@@ -28,9 +37,13 @@
         $sql_check = "SELECT * FROM tblsinhvien WHERE MSSV = '$MSSV'";
         $result_check = $conn->query($sql_check);
         if ($result_check->num_rows > 0) {
-            echo "Lỗi: MSSV đã tồn tại!";
-            echo "<br>";
-            echo "<a href='form_register.php'>Quay lại</a>";
+            echo "<script>
+                if (confirm('Tài khoản đã tồn tại!!')) {
+                    window.location.href = 'form_register.php';
+                } else {
+                    // Do something else or simply close the dialog
+                }
+              </script>";
             exit();
         }
 
@@ -38,9 +51,13 @@
         $sql_check_user = "SELECT * FROM tblusers WHERE TK = '$TK'";
         $result_check_user = $conn->query($sql_check_user);
         if ($result_check_user->num_rows > 0) {
-            echo "Lỗi: Tên tài khoản đã tồn tại!";
-            echo "<br>";
-            echo "<a href='form_register.php'>Quay lại</a>";
+            echo "<script>
+                if (confirm('Tài khoản đã tồn tại!!')) {
+                    window.location.href = 'form_register.php';
+                } else {
+                    
+                }
+              </script>";
             exit();
         }
 
@@ -48,15 +65,20 @@
         $sql2 = "INSERT INTO tblsinhvien (MSSV, HoTen, Lop, Khoa, SDT) VALUES ('$MSSV', '$HoTen', '$Lop', '$Khoa', '$SDT')";
 
         if ($conn->query($sql) === TRUE && $conn->query($sql2) === TRUE) {
-            echo "Đăng ký thành công!";
-            echo "<br>";
-            echo "<a href='form_login.php'>Đăng nhập</a>"; 
-            echo "           ";
-            echo "<a href='form_register.php'>Quay lại</a>";
+            echo "<script>
+                if (confirm('Đăng ký thành công!! Bạn có thể đăng nhập!!')) {
+                    window.location.href = 'form_login.php';
+                } else {
+                }
+              </script>";
         } else {
-            echo "Lỗi: " . $sql . "<br>" . $conn->error;
-            echo "<br>";
-            echo "<a href='form_register.php'>Quay lại</a>";
+            echo "<script>
+                if (confirm('Đã có lỗi xảy ra!! Hãy đăng ký lại!!')) {
+                    window.location.href = 'form_register.php';
+                } else {
+                    // Do something else or simply close the dialog
+                }
+              </script>";
         }
 
         $conn->close();
