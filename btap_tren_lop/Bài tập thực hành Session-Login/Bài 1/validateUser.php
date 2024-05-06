@@ -1,10 +1,11 @@
+
 <?php
     session_start();
 
     $tk = $_REQUEST["txtTenTaiKhoan"];
     $mk = $_REQUEST["txtMatKhau"];
 
-    require_once('../config.php'); 
+    require_once('../../config.php'); 
     $host = "localhost";
     $user = "root";
     $password = DB_PASSWORD;
@@ -30,11 +31,11 @@
         setcookie('sessionId', $sessionId, time() + (86400), "/"); // Hết hạn trong 1 ngày (86400 giây)
 
         $_SESSION['IsLogin'] = true;
-        header("Location: ../View/content.php");
+        header("Location:content.php");
         exit();
     } else {
         echo "User or password incorrect";
-        header("Refresh:2; url=../View/login.html"); 
+        header("Refresh:2; url=login.html"); 
         exit();
     }
     mysqli_close($con);

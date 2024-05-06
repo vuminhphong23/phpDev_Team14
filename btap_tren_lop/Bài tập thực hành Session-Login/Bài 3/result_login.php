@@ -10,7 +10,7 @@ function ann() {
               </script>";
 }
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    require_once('config.php');
+    require_once('../../config.php');
 
     $host = "localhost";
     $user = "root";

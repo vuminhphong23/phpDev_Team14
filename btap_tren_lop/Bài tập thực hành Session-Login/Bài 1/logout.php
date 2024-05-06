@@ -9,6 +9,6 @@
         setcookie(session_name(), '', time()-3600, '/');
     }
     // Chuyển hướng người dùng đến trang đăng nhập
-    header("Location: ../View/login.html");
+    header("Location:login.html");
     exit(); // Kết thúc quá trình xử lý
 ?>

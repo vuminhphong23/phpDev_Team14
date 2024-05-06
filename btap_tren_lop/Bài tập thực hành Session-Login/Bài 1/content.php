@@ -1,7 +1,7 @@
 <?php
     session_start();
     if ($_SESSION["IsLogin"] == false)
-        header("Location: ../View/login.html");
+        header("Location:login.html");
 ?>
 <?php
    $id = session_id();
@@ -26,7 +26,7 @@
 echo ("<br/><br/>");
 echo "$msg";
 echo ("<br/><br/>");
-echo ("<a href='../Controller/logout.php'>Logout</a>");
+echo ("<a href='logout.php'>Logout</a>");
 
 ?>
 

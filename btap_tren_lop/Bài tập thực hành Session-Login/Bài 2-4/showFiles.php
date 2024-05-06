@@ -1,12 +1,12 @@
 <?php
-$files = scandir("../upload/");
+$files = scandir("upload/");
 foreach ($files as $file) {
     if ($file != '.' && $file != '..') {
-        $file_path = "../upload/" . $file;
+        $file_path = "upload/" . $file;
         if (file_exists($file_path)) {
             $file_info = pathinfo($file_path);
             $file_size = filesize($file_path);
-            $file_date = date("Y-m-d H:i:s", filemtime($file_path));
+            $file_date = date("Y-m-d", filemtime($file_path));
             echo "<tr>";
             echo "<td>".$file_info['basename']."</td>";
             echo "<td>".$file_info['extension']."</td>";
@@ -15,7 +15,7 @@ foreach ($files as $file) {
             
             // Thêm cột cho nút xóa
             echo "<td>";
-            echo "<form id='deleteForm' action='../Controller/deleteFile.php' method='post' onsubmit='return confirmDelete()'>";
+            echo "<form id='deleteForm' action='deleteFile.php' method='post' onsubmit='return confirmDelete()'>";
             echo "<input type='hidden' name='fileToDelete' value='".$file_path."'>";
             echo "<button type='submit' class='delete-btn'>Delete</button>";
             echo "</form>";
