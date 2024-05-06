@@ -77,12 +77,8 @@ if(isset($_GET['success']) && $_GET['success'] == 1) {
         <br>
         <br>
         <input type="submit" value="Đăng nhập">
-<<<<<<< HEAD
-        <input type="submit" value="Đăng ký">
-=======
         <br>
         <a href="form_register.php" class="register-button">Đăng ký</a>
->>>>>>> 9ac07c21a788ff0318191028d9f29972381e1ccd
     </form>
 </body>
 </html>
