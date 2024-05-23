@@ -1,38 +1,39 @@
 # Những nguy cơ có thể gặp phải trong project bài tập cuối kỳ
 1. SQL injection vulnerability.
-SQL Injection xảy ra khi một ứng dụng web cho phép người dùng nhập dữ liệu vào các câu truy vấn SQL một cách không an toàn, dẫn đến khả năng thực thi các lệnh SQL độc hại.
+    - SQL Injection xảy ra khi một ứng dụng web cho phép người dùng nhập dữ liệu vào các câu truy vấn SQL một cách không an toàn, dẫn đến khả năng thực thi các lệnh SQL độc hại.
 
 2. Cross-Site Scripting (XSS)
-XSS xảy ra khi một ứng dụng cho phép người dùng nhập dữ liệu có thể chứa mã JavaScript độc hại, sau đó dữ liệu này được hiển thị lại cho người dùng khác mà không qua kiểm tra hoặc mã hóa.
+    - XSS xảy ra khi một ứng dụng cho phép người dùng nhập dữ liệu có thể chứa mã JavaScript độc hại, sau đó dữ liệu này được hiển thị lại cho người dùng khác mà không qua kiểm tra hoặc mã hóa.
 
 3. Cross-Site Request Forgery (CSRF)
-CSRF là khi một người dùng không biết mình đang gửi yêu cầu độc hại đến một ứng dụng web mà họ đã xác thực, dẫn đến việc thực hiện các hành động không mong muốn.
+    - CSRF là khi một người dùng không biết mình đang gửi yêu cầu độc hại đến một ứng dụng web mà họ đã xác thực, dẫn đến việc thực hiện các hành động không mong muốn.
 
 4. Insecure Direct Object References (IDOR)
-IDOR xảy ra khi ứng dụng cho phép truy cập trực tiếp đến các đối tượng dựa trên đầu vào của người dùng mà không kiểm tra quyền hạn, dẫn đến việc lộ thông tin hoặc dữ liệu của người dùng khác.
+    - IDOR xảy ra khi ứng dụng cho phép truy cập trực tiếp đến các đối tượng dựa trên đầu vào của người dùng mà không kiểm tra quyền hạn, dẫn đến việc lộ thông tin hoặc dữ liệu của người dùng khác.
 
 5. Broken Authentication and Session Management
-Vấn đề này xảy ra khi các cơ chế xác thực và quản lý phiên (session) không được cấu hình hoặc thực hiện đúng cách, dẫn đến nguy cơ tấn công từ việc đoán mật khẩu, đánh cắp phiên hoặc chiếm quyền điều khiển tài khoản.
+    - Vấn đề này xảy ra khi các cơ chế xác thực và quản lý phiên (session) không được cấu hình hoặc thực hiện đúng cách, dẫn đến nguy cơ tấn công từ việc đoán mật khẩu, đánh cắp phiên hoặc chiếm quyền điều khiển tài khoản.
 
 6. Security Misconfiguration
-Security Misconfiguration xảy ra khi hệ thống hoặc ứng dụng không được cấu hình bảo mật đúng cách, dẫn đến các lỗ hổng bảo mật.
+    - Security Misconfiguration xảy ra khi hệ thống hoặc ứng dụng không được cấu hình bảo mật đúng cách, dẫn đến các lỗ hổng bảo mật.
 
 7. Sensitive Data Exposure
-Việc lộ dữ liệu nhạy cảm xảy ra khi thông tin như mật khẩu, thông tin thẻ tín dụng hoặc dữ liệu cá nhân không được bảo vệ đúng cách.
+    - Việc lộ dữ liệu nhạy cảm xảy ra khi thông tin như mật khẩu, thông tin thẻ tín dụng hoặc dữ liệu cá nhân không được bảo vệ đúng cách.
 
 8. Using Components with Known Vulnerabilities
-Sử dụng các thư viện, module hoặc phần mềm có lỗ hổng bảo mật đã được biết mà chưa được vá lỗi.
+    - Sử dụng các thư viện, module hoặc phần mềm có lỗ hổng bảo mật đã được biết mà chưa được vá lỗi.
 
 9. Insufficient Logging and Monitoring
-Việc không ghi lại đầy đủ hoặc không giám sát hoạt động của hệ thống, dẫn đến việc không phát hiện kịp thời các hành vi bất thường hoặc tấn công.
+    - Việc không ghi lại đầy đủ hoặc không giám sát hoạt động của hệ thống, dẫn đến việc không phát hiện kịp thời các hành vi bất thường hoặc tấn công.
 
 10. File Upload Vulnerabilities
-Các lỗ hổng liên quan đến việc tải lên các file mà không kiểm tra kỹ, có thể dẫn đến việc thực thi mã độc hoặc lộ thông tin.
+    - Các lỗ hổng liên quan đến việc tải lên các file mà không kiểm tra kỹ, có thể dẫn đến việc thực thi mã độc hoặc lộ thông tin.
 
 11. Lỗi ứng dụng 500 (Not Found).
+    - Lỗi 500 xảy ra khi máy chủ gặp phải sự cố không xác định và không thể xử lý yêu cầu.
 
 12. Khóa bị lộ (Key Exposure) hay là Rác thông tin (Rubbish Character).
-
+    - Lộ thông tin nhạy cảm như API keys, khóa mã hóa hoặc xuất hiện các ký tự không mong muốn trong dữ liệu
 # Cách hạn chế những nguy cơ này
 1. SQL Injection
     - Sử dụng Eloquent ORM hoặc Query Builder: Laravel cung cấp ORM Eloquent và Query Builder để xây dựng các truy vấn an toàn
