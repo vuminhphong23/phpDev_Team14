@@ -121,6 +121,11 @@ Các lỗ hổng liên quan đến việc tải lên các file mà không kiểm
         > $hashed = Hash::make('password');
 
     - Sử dụng HTTPS: Để bảo vệ dữ liệu trong quá trình truyền tải.
+  
+8. Using Components with Known Vulnerabilities
+    - Thường xuyên cập nhật các thư viện và dependencies: Sử dụng composer update để cập nhật các thư viện.
+        > composer update
+    - Sử dụng các công cụ kiểm tra lỗ hổng: Như Snyk hoặc OWASP Dependency-Check để kiểm tra các thư viện có lỗ hổng bảo mật.
 
 9. Insufficient Logging and Monitoring
     - Sử dụng hệ thống logging của Laravel: Laravel cung cấp các phương thức để ghi lại các hoạt động quan trọng và lỗi.
